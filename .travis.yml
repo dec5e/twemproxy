@@ -1,3 +1,18 @@
 language: c
-script: bash ./travis.sh
+
+sudo: false
+
+addons:
+  apt:
+    sources:
+    - socat
+
+before_script:
+  - pip install redis
+  - pip install nose
+  - pip install git+https://github.com/andymccurdy/redis-py.git@2.9.0
+  - pip install git+https://github.com/idning/python-memcached.git#egg=memcache
+
+script:
+  - bash ./travis.sh
 
