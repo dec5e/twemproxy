@@ -8,10 +8,10 @@ addons:
     - socat
 
 before_script:
-  - pip install redis
-  - pip install nose
-  - pip install git+https://github.com/andymccurdy/redis-py.git@2.9.0
-  - pip install git+https://github.com/idning/python-memcached.git#egg=memcache
+  - travis_retry pip install redis
+  - travis_retry pip install nose
+  - travis_retry pip install git+https://github.com/andymccurdy/redis-py.git@2.9.0
+  - travis_retry pip install git+https://github.com/idning/python-memcached.git#egg=memcache
 
 script:
   - bash ./travis.sh
