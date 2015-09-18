@@ -5,6 +5,10 @@ sudo: false
 addons:
   apt:
     packages:
+    - build-essential
+    - libtool
+    - autoconf
+    - automake
     - socat
 
 before_script:
